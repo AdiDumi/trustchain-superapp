@@ -10,13 +10,13 @@ The special requirement was that it should also work in an emergency: when the I
 
 Here we list and explain the function calls that are possible within our application:
 
-'''send_tokens'''
+```send_tokens```
 
-'''receive_tokens'''
+```receive_tokens```
 
-'''show_token_balance'''
+```show_token_balance```
 
-'''show_user_transactions'''
+```show_user_transactions```
 
 
 
