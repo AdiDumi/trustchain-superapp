@@ -3,42 +3,78 @@
 This is the repository for the Blockchain Engineering course (CS4160). Our task was to create an easy payment platform using tokens that is able to transfer euros, without Internet. Giving and receiving tokens should be easy and effortless. 
 
 ## Abstract
-The Offline Digital Euro application is a prototype that implements a way to exchange euros digitally while not being connected to the internet. 
+The Offline Digital Euro application is prototype application that implements a way to exchange token-based euros digitally while not being connected to the internet. 
 
 Key features include:
 - Simple user-friendly design
 - Data persistance when restarting the application
 - View transaction history
-- Local faucet that can print demo money
-
-PeerChat implements a fully functional prototype of a distributed messaging app. First, the users have to exchange the public keys by scanning each other's QR code, or by copy-pasting the hexadecimal public keys. This guarantees authenticity of all messages which are signed by their author. It prevents man-in-the-middle and impersonation attacks.
-
-An online indicator and the last message is shown for each contact. Users can exchange text messages and get acknowledgments when a message is delivered.
+- Local faucet that can print money for demonstrative purposes
 
 
-The special requirement was that it should work in an emergency: when the Internet is down. We use QR-codes scanning to move euros between devices. The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network. 
+ 
+
+# User-Guide
+The information listed below shows the steps needed to take to accomplish the desired goal when using the Offline Digital Euro application.
+
+Steps to print digital euro tokens:
+1. Open up the application.
+2. Print euros via the top right menu.
+3. Select the euro tokens to add the wallet.
+4. Click on the Continue button. The euro tokens are generated and will be displayed in the user's wallet.
+
+Steps to send euro tokens:
+1. Open the application.
+2. Click on the Send button.
+3. Select the amount of euro tokens to send.
+4. When clicking the Select button, a QR-code gets generated for the receiver to scan.
+5. Have the receiving party scan the QR-code 
+
+Steps to receive euro tokens:
+1. Open the application
+2. Click on the Get button. This opens up a camera with scanning capabilities.
+3. Now have the sending party generate a QR code with the agreed number of tokens.
+4. Scan the generated QR-code. Confirmation sound will play once transaction is complete.
+5. Check in balance and transaction history whether transaction has been completed.
+
 
 # Solution
+The special requirement was that it should work in an emergency: when the Internet is down. When starting the project, we were adviced to implement QR-code scanning to move euros between devices since that was the easiest to implement. 
 
 
 ## Double Spending Mitigation
+The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network. 
 
 ### Prevention
+The first measure in double spending mitigation is the prevention of it.
 
 ### Detection
+While prevention measures in the design can make it more difficult to double spend. It does not completely migitate the risk. Therefore, it becomes important to detect when it in fact does occur.
+
+- Debt accumulation
+- Not connected to network in XX amount of days when 1 party uploaded transaction.
 
 ### Enforcement
-- Wallets are tied to real-world identities, when debt accumulation on the online chainpasses thresholds like  
+Whenever double spending is detected, it should first be investigated whether it was done on purpose or whether something went wrong in the process. This can be done in similar fashion to what commericial banks are doing when they see strange transactions on one's creditcard.
+However, when done on purpose and maliciously, the people in question should be held accountable. 
 
+Our solution to this is that future wallets are tied to real-world identities, when double spending is detected. It becomes a matter of the law to track down and procecute them.
 
-# Future Research
+# Limitations
 During the development of our solution, we encountered various limitations.
 
-- QR-code not the ideal solution:
-QR codes can only contain max 1MB of information, sending lots of tokens will not be possible. Disadvantage is that communication is done one-way.
-A solution would be to try and implement Near Field Communication (NFC) enables two-way communication between devices.
+- QR codes can only contain max 1MB of information, sending lots of tokens will not be possible.
+- Exchange of information and data is only done one-way. 
+- Everyone can scan the QR-code, so if somebody gets a copy of the QR and scans it as well, it will save that transaction
+- When sending a large number of tokens, the QR code gets very cluttered. This makes it difficult for the receiving party to accurately scan the code.
 
-- 
+
+# Future Research 
+
+- One solution would be to try and implement Near Field Communication (NFC) instead of using a QR-code implementation. This solves many of the mentioned limitations since it allows for private two-way communication between two devices and the exchange of more information. 
+- - No size limitation of 1MB
+- - No hijacking of the session by scanning other people's QR codes.
+- - Both parties are able to exchange information to one another this improves the bookkeeping and administration of transactions. 
 
 
 # API Documentation
@@ -48,6 +84,8 @@ A solution would be to try and implement Near Field Communication (NFC) enables 
 
 ## Receiving Euros
 
+
+## 
 
 # Database Design
 
@@ -101,6 +139,3 @@ tokens_table : TokensDao
 -	getAllTokensOfType(token_type)
 -	insertToken()
 -	deleteToken()
-
-
-
