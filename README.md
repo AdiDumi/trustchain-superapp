@@ -72,17 +72,17 @@ During the development of our solution, we encountered various limitations.
 # Future Research 
 
 - One solution would be to try and implement Near Field Communication (NFC) instead of using a QR-code implementation. This solves many of the mentioned limitations since it allows for private two-way communication between two devices and the exchange of more information. 
-- - No size limitation of 1MB
-- - No hijacking of the session by scanning other people's QR codes.
-- - Both parties are able to exchange information to one another this improves the bookkeeping and administration of transactions. 
+    - No size limitation of 1MB
+    - No hijacking of the session by scanning other people's QR codes.
+    - Both parties are able to exchange information to one another this improves the bookkeeping and administration of transactions. 
 
 
 # API Documentation
 
-## Sending Euros
+## Sending Euro Tokens
 
 
-## Receiving Euros
+## Receiving Euro Tokens
 
 
 ## 
@@ -94,48 +94,58 @@ One method to store and retrieve persistent variables throughout your applicatio
 
 ### Room Database Design
 
-DB name: OfflineDigitalEuroRoomDatabase
+DB name: *OfflineDigitalEuroRoomDatabase*
 
 The following entities (tables) will be stored in the database along with their respective columns:
 In the userdata_table all information regarding the user will be stored. This table will only consist of one row that will be updated whenever information regarding the user changes.
 
 -	userdata_table
-o	user_id : Int
-o	username : String
-o	public_key : String
-o	private_key : String
+    - user_id : Int
+    - username : String
+    - public_key : String
+    - private_key : String
 
 The transactions_table will contain transactions that took place for the user that is logged into the device. 
 
 -	transactions_table
-o	transaction_id : Int
-o	transaction_datetime : String
-o	pubk_sender : String
-o	pubk_receiver : String
-o	amount : Double
-o	verified : Boolean
+   - transaction_id : Int
+   - transaction_datetime : String
+   - pubk_sender : String
+   - pubk_receiver : String
+   - amount : Double 
+   - verified : Boolean
 
 The tokens_table stored all tokens that the logged in user owns. Currently owned tokens are stored in this table, but also transferred incoming tokens will be inserted into the table.
 
 -	tokens_table
-o	token_id : String
-o	token_value : Double
-o	token_data : ByteArray/String
+    - token_id : String
+    - token_value : Double
+    - token_data : ByteArray/String
 
 We can interact with the data in the database through the use of DAOs where each table will have its own DAO with functions that send instructions to the database.
 
 Userdata_table : UserDao 
--	getUserData()
--	insertUser()
--	updateUser()
--	deleteUserData()
+
+```getUserData()```
+
+```insertUser()```
+
+```updateUser()```
+
+```deleteUserData()```
 
 transactions_table : TransactionsDao
--	getTransactionData()
--	insertTransaction()
+
+```getTransactionData()```
+
+```insertTransaction()```
 
 tokens_table : TokensDao
--	getMoneyBalance()
--	getAllTokensOfType(token_type)
--	insertToken()
--	deleteToken()
+
+```getMoneyBalance()```
+
+```getAllTokensOfType(token_type)```
+
+```insertToken()```
+
+```deleteToken()```
