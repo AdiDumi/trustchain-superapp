@@ -147,7 +147,7 @@ This method generates a random alphanumeric string of the specified length and r
 - private fun createTokens(token1_count: Int, token2_count: Int, token5_count: Int, token10_count: Int): Array<Token>
 This method creates an array of Token objects based on the provided counts for each denomination (1, 2, 5, and 10). It returns an array of created tokens.
 
-- Usage
+*Usage*
 1. The user set the amount of tokens of each value.
 2. The user click the *Print* button, and then the user has the corresponding value of money in their account, and this money is also saved in the database.
 
