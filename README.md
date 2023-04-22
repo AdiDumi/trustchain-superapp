@@ -110,6 +110,7 @@ Converts an array of DBToken objects into a list of Token objects.
   - count - The number of tokens to convert.
 - Returns: A mutable list containing the converted Token objects.
 
+**Usage**
 1. When a user wants to send tokens, navigate to this fragment.
 2. The fragment will display a QR code containing the transfer data.
 3. The recipient scans the QR code to receive the tokens.
