@@ -49,32 +49,39 @@ The hard scientific task is to come up with a measure to mitigate the double spe
 The first measure in double spending mitigation is the prevention of it.
 
 ### Detection
-While prevention measures in the design can make it more difficult to double spend. It does not completely migitate the risk. Therefore, it becomes important to detect when it in fact does occur.
+While prevention measures in the design can make it more difficult to double spend. It does not completely migitate the risk. Therefore, it becomes important to detect when it in fact does occur. We came up with duplicate token detection measure that update
+
+
 
 - Debt accumulation
 - Not connected to network in XX amount of days when 1 party uploaded transaction.
 
 ### Enforcement
 Whenever double spending is detected, it should first be investigated whether it was done on purpose or whether something went wrong in the process. This can be done in similar fashion to what commericial banks are doing when they see strange transactions on one's creditcard.
-However, when done on purpose and maliciously, the people in question should be held accountable. 
+However, when done on purpose and maliciously, the people in question should be held accountable. Our solution to this is that wallets are tied to real-world identities, when double spending is detected. It becomes a matter of the law to track down these malicious users and procecute them.
 
-Our solution to this is that future wallets are tied to real-world identities, when double spending is detected. It becomes a matter of the law to track down and procecute them.
+Whenever a person whom has spend money in an offline environment comes back online again, the token, transactions and web-of-trust information gets uploaded to the central authority's servers where the information gets processed accordingly to update the chain about who is trustworthy or not.
 
 # Limitations
-During the development of our solution, we encountered various limitations.
+During the development of our solution, we encountered various limitations. The main issues are related to the implementation of the QR code.
 
-- QR codes can only contain max 1MB of information, sending lots of tokens will not be possible.
-- Exchange of information and data is only done one-way. 
-- Everyone can scan the QR-code, so if somebody gets a copy of the QR and scans it as well, it will save that transaction
-- When sending a large number of tokens, the QR code gets very cluttered. This makes it difficult for the receiving party to accurately scan the code.
+## QR code limitations
+1. QR codes can only contain max 3KB of information, sending lots of tokens will not be possible.
+2. When sending a large number of tokens, the QR code gets very cluttered. This makes it difficult for the receiving party to accurately scan the code.
+3. Exchange of information and data is only done one-way. 
+4. Everyone can scan the QR-code, so if somebody gets a copy of the QR and scans it as well, it will save that transaction
 
+## Data Storage
+
+Since we are storing the tokens and transactions locally, in theory it would possible to come across a storage limitiation where there is no more space left on the device to store information. It especially poses a risk when a user's device also has information from other apps like photos, audio or videos.  
 
 # Future Research 
 
 - One solution would be to try and implement Near Field Communication (NFC) instead of using a QR-code implementation. This solves many of the mentioned limitations since it allows for private two-way communication between two devices and the exchange of more information. 
-    - No size limitation of 1MB
+    - No size limitation of 3KB
     - No hijacking of the session by scanning other people's QR codes.
     - Both parties are able to exchange information to one another this improves the bookkeeping and administration of transactions. 
+- A solution for the data storage problem would be to keep a blacklist of malicous users issued by the Central Authority instead of keeping track of every individual token in your posession. 
 
 
 # API Documentation
