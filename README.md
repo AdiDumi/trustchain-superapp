@@ -89,11 +89,10 @@ Since we are storing the tokens and transactions locally, in theory it would pos
 ## Sending Euro Tokens
 We adopt the existing EuroToken as our token. On the main page, when a user wants to send tokens, click *"SEND"* button and choose the amount of tokens of each value to send. 
 
-## Classes and Functions
-### SendDigitalEuroFragment
-The main class representing the fragment.
 
-*loadTokensToSend(oneCount: Int, twoCount: Int, fiveCount: Int, tenCount: Int): MutableSet<Token>*
+### The main class representing the fragment.
+
+**loadTokensToSend(oneCount: Int, twoCount: Int, fiveCount: Int, tenCount: Int): MutableSet<Token>**
 Loads the specified number of tokens of each denomination (1, 2, 5, and 10) from the database to be sent to the recipient.
  
 - Parameters:
@@ -104,7 +103,7 @@ Loads the specified number of tokens of each denomination (1, 2, 5, and 10) from
  
 - Returns: A mutable set containing the selected tokens to be sent.
  
-*dbTokens2Tokens(dbTokens: Array<DBToken>, count: Int): MutableList<Token>*
+**dbTokens2Tokens(dbTokens: Array<DBToken>, count: Int): MutableList<Token>**
 Converts an array of DBToken objects into a list of Token objects.
  
 - Parameters:
