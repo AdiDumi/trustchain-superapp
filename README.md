@@ -142,10 +142,10 @@ The print money function is for testing purpose, allowing users to have some tok
 This method sets the initial recipient for the provided tokens array. The recipient parameter represents the recipient's public key in ByteArray format.
 
 - private fun generateRandomString(length: Int): ByteArray
-This method generates a random alphanumeric string of the specified length and returns it as a ByteArray.
+This method generates a random alphanumeric string of the specified length and returns it as a ByteArray. This is for getting a unique ByteArray for the verification and identification.
 
 - private fun createTokens(token1_count: Int, token2_count: Int, token5_count: Int, token10_count: Int): Array<Token>
-This method creates an array of Token objects based on the provided counts for each denomination (1, 2, 5, and 10). It returns an array of created tokens.
+This method creates an array of Token objects based on the provided counts for each denomination (1, 2, 5, and 10). It returns an array of created tokens of different values.
 
 *Usage*
 1. The user set the amount of tokens of each value.
