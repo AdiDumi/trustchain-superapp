@@ -137,7 +137,7 @@ On the main page, the user could also use the *GET* button to get tokens from ot
 ## Print Money
 The print money function is for testing purpose, allowing users to have some tokens to test the send and get functions.
 
-- Methods
+*Methods*
 - private fun setFirstRecipient(tokens: Array<Token>, recipient: ByteArray)
 This method sets the initial recipient for the provided tokens array. The recipient parameter represents the recipient's public key in ByteArray format.
 
