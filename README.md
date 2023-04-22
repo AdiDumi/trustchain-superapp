@@ -158,12 +158,19 @@ The transactions_table will contain transactions that took place for the user th
    - amount : Double 
    - verified : Boolean
 
-The tokens_table stored all tokens that the logged in user owns. Currently owned tokens are stored in this table, but also transferred incoming tokens will be inserted into the table.
+The tokens_table stores all tokens that the logged in user owns. Currently owned tokens are stored in this table, but also transferred incoming tokens will be inserted into the table.
 
 -	tokens_table
     - token_id : String
     - token_value : Double
     - token_data : ByteArray/String
+
+The weboftrust_table will keep track of the reputations of other people that the device’s user interacted with. It stores the public key of those users and a score value that is associated with that user. 
+
+-	weboftrust _table
+    - public_key : String
+    - trust_score: Int
+
 
 We can interact with the data in the database through the use of DAOs where each table will have its own DAO with functions that send instructions to the database.
 
@@ -173,22 +180,44 @@ Userdata_table : UserDao
 
 ```insertUser()```
 
-```updateUser()```
-
 ```deleteUserData()```
 
 transactions_table : TransactionsDao
 
 ```getTransactionData()```
 
-```insertTransaction()```
+```getLimitedTransactionsData(limit_value)```
+
+```insertTransaction(transactions)```
+
+```deleteTransactionData(transactions)```
+
+
 
 tokens_table : TokensDao
 
-```getMoneyBalance()```
+``` getAllTokens ()```
 
 ```getAllTokensOfType(token_type)```
 
+``` getAllTokensOfValue(token_value)```
+
+```getCountTokensOfValue(token_value)```
+
+``` getSpecificToken(token_id)```
+
 ```insertToken()```
 
-```deleteToken()```
+``` deleteToken(token_id)```
+
+
+weboftrust_table : WebOfTrustDAO
+
+``` getUserTrustScore(public_key)```
+
+``` getAllTrustScores()```
+
+```insertUserTrustScore(user)```
+
+``` updateUserScore(public_key, update_score_value)```
+
