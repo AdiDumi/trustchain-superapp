@@ -39,11 +39,10 @@ Steps to receive euro tokens:
 
 
 # Solution
-The special requirement was that it should work in an emergency: when the Internet is down. When starting the project, we were adviced to implement QR-code scanning to move euros between devices since that was the easiest to implement. 
-
+The special requirement was that it should work in an emergency: when the Internet is down. When starting the project, we were advised to implement QR-code scanning to move euros between devices since that was the easiest to implement. Additionally, we had to come up with a mitigating measure that allows for the detection of any malicious users or cheaters that try to double spend.
 
 ## Double Spending Mitigation
-The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network. 
+The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network or a central authority, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network/authority has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network.
 
 ### Prevention
 The first measure in double spending mitigation is the prevention of it.
