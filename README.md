@@ -138,13 +138,13 @@ On the main page, the user could also use the *GET* button to get tokens from ot
 The print money function is for testing purpose, allowing users to have some tokens to test the send and get functions.
 
 - Methods
-*private fun setFirstRecipient(tokens: Array<Token>, recipient: ByteArray)*
+- private fun setFirstRecipient(tokens: Array<Token>, recipient: ByteArray)
 This method sets the initial recipient for the provided tokens array. The recipient parameter represents the recipient's public key in ByteArray format.
 
-*private fun generateRandomString(length: Int): ByteArray*
+- private fun generateRandomString(length: Int): ByteArray
 This method generates a random alphanumeric string of the specified length and returns it as a ByteArray.
 
-*private fun createTokens(token1_count: Int, token2_count: Int, token5_count: Int, token10_count: Int): Array<Token>*
+- private fun createTokens(token1_count: Int, token2_count: Int, token5_count: Int, token10_count: Int): Array<Token>
 This method creates an array of Token objects based on the provided counts for each denomination (1, 2, 5, and 10). It returns an array of created tokens.
 
 - Usage
