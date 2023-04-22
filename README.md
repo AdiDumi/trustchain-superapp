@@ -87,8 +87,35 @@ Since we are storing the tokens and transactions locally, in theory it would pos
 # API Documentation
 
 ## Sending Euro Tokens
+We adopt the existing EuroToken as our token. On the main page, when a user wants to send tokens, click *"SEND"* button and choose the amount of tokens of each value to send. 
 
+## Classes and Functions
+### SendDigitalEuroFragment
+The main class representing the fragment.
 
+*loadTokensToSend(oneCount: Int, twoCount: Int, fiveCount: Int, tenCount: Int): MutableSet<Token>*
+Loads the specified number of tokens of each denomination (1, 2, 5, and 10) from the database to be sent to the recipient.
+ 
+- Parameters:
+  - oneCount - The number of 1 Euro tokens to be sent.
+  - twoCount - The number of 2 Euro tokens to be sent.
+  - fiveCount - The number of 5 Euro tokens to be sent.
+  - tenCount - The number of 10 Euro tokens to be sent.
+ 
+- Returns: A mutable set containing the selected tokens to be sent.
+ 
+*dbTokens2Tokens(dbTokens: Array<DBToken>, count: Int): MutableList<Token>*
+Converts an array of DBToken objects into a list of Token objects.
+ 
+- Parameters:
+  - dbTokens - An array of DBToken objects to be converted.
+  - count - The number of tokens to convert.
+- Returns: A mutable list containing the converted Token objects.
+
+1. When a user wants to send tokens, navigate to this fragment.
+2. The fragment will display a QR code containing the transfer data.
+3. The recipient scans the QR code to receive the tokens.
+4. The sender can either cancel the transfer or confirm it by clicking the corresponding buttons. If confirmed, the tokens will be removed from the sender's database.
 ## Receiving Euro Tokens
 
 
