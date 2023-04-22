@@ -45,7 +45,7 @@ The special requirement was that it should work in an emergency: when the Intern
 The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network or a central authority, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network/authority has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network.
 
 ### Prevention
-The first measure in double spending mitigation is the prevention of it.
+The first measure in double spending mitigation is the prevention of it. 
 
 ### Detection
 While prevention measures in the design can make it more difficult to double spend. It does not completely migitate the risk. Therefore, it becomes important to detect when it in fact does occur. We came up with duplicate token detection measure that update
@@ -65,14 +65,22 @@ Whenever a person whom has spend money in an offline environment comes back onli
 During the development of our solution, we encountered various limitations. The main issues are related to the implementation of the QR code.
 
 ## QR code limitations
-1. QR codes can only contain max 3KB of information, sending lots of tokens will not be possible.
+1. QR codes can only contain max 3KB of information, sending more than 3 tokens will not be possible.
 2. When sending a large number of tokens, the QR code gets very cluttered. This makes it difficult for the receiving party to accurately scan the code.
 3. Exchange of information and data is only done one-way. 
-4. Everyone can scan the QR-code, so if somebody gets a copy of the QR and scans it as well, it will save that transaction
 
 ## Data Storage
 
-Since we are storing the tokens and transactions locally, in theory it would possible to come across a storage limitiation where there is no more space left on the device to store information. It especially poses a risk when a user's device also has information from other apps like photos, audio or videos.  
+Since we are storing the tokens and transactions locally, in theory it would possible to come across a storage limitiation where there is no more space left on the device to store information. It especially poses a risk when a user's device also has information from other apps like photos, audio or videos. 
+
+
+## Vulnerabilities
+When creating our implementation of the Offline Digital Euro token, we came across several vulnerabilities that need to be address in future research when improving on the application.
+
+- Everyone can scan the QR-code, so if somebody leaks or gets a copy of the QR and scans it as well, it will save that transaction and the coins will be duplicated. 
+- Instead of confirming the transaction on the sender's side after generating the QR code the sender can still go back even though the QR code got scanned by the receiving side. This way the receiver receives the tokens, but the sender gets to keep the tokens as well.
+- Vulnerable to copying/migrating the OfflineDigitalEuro database that contains the tokens to a different device. 
+- 
 
 # Future Research 
 
