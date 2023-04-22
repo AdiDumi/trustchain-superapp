@@ -150,6 +150,7 @@ This method creates an array of Token objects based on the provided counts for e
 *Usage*
 1. The user set the amount of tokens of each value.
 2. The user click the *Print* button, and then the user has the corresponding value of money in their account, and this money is also saved in the database.
+*3. The printed money is set to be owned by the central authority at creation.*
 
 ## 
 
