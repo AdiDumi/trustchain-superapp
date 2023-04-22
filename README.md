@@ -151,12 +151,12 @@ In the userdata_table all information regarding the user will be stored. This ta
 The transactions_table will contain transactions that took place for the user that is logged into the device. 
 
 -	transactions_table
-   - transaction_id : Int
-   - transaction_datetime : String
-   - pubk_sender : String
-   - pubk_receiver : String
-   - amount : Double 
-   - verified : Boolean
+    - transaction_id : Int
+    - transaction_datetime : String
+    - pubk_sender : String
+    - pubk_receiver : String
+    - amount : Double 
+    - verified : Boolean
 
 The tokens_table stores all tokens that the logged in user owns. Currently owned tokens are stored in this table, but also transferred incoming tokens will be inserted into the table.
 
