@@ -181,6 +181,8 @@ Userdata_table : UserDao
 ```insertUser()```
 
 ```deleteUserData()```
+ 
+ 
 
 transactions_table : TransactionsDao
 
@@ -196,21 +198,22 @@ transactions_table : TransactionsDao
 
 tokens_table : TokensDao
 
-``` getAllTokens ()```
+```getAllTokens ()```
 
 ```getAllTokensOfType(token_type)```
 
-``` getAllTokensOfValue(token_value)```
+```getAllTokensOfValue(token_value)```
 
 ```getCountTokensOfValue(token_value)```
 
-``` getSpecificToken(token_id)```
+```getSpecificToken(token_id)```
 
 ```insertToken()```
 
-``` deleteToken(token_id)```
+```deleteToken(token_id)```
 
 
+ 
 weboftrust_table : WebOfTrustDAO
 
 ``` getUserTrustScore(public_key)```
