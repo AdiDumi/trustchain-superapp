@@ -134,7 +134,22 @@ On the main page, the user could also use the *GET* button to get tokens from ot
   - The user can either accept the transfer or refuse it by clicking the corresponding buttons. If accepted, the tokens will be added to the user's database.
   - If refused, no action will be taken and the user will be redirected back to the transfer fragment.
 
+## Print Money
+The print money function is for testing purpose, allowing users to have some tokens to test the send and get functions.
 
+- Methods
+*private fun setFirstRecipient(tokens: Array<Token>, recipient: ByteArray)*
+This method sets the initial recipient for the provided tokens array. The recipient parameter represents the recipient's public key in ByteArray format.
+
+*private fun generateRandomString(length: Int): ByteArray*
+This method generates a random alphanumeric string of the specified length and returns it as a ByteArray.
+
+*private fun createTokens(token1_count: Int, token2_count: Int, token5_count: Int, token10_count: Int): Array<Token>*
+This method creates an array of Token objects based on the provided counts for each denomination (1, 2, 5, and 10). It returns an array of created tokens.
+
+- Usage
+1. The user set the amount of tokens of each value.
+2. The user click the *Print* button, and then the user has the corresponding value of money in their account, and this money is also saved in the database.
 
 ## 
 
