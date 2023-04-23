@@ -8,8 +8,9 @@ The Offline Digital Euro application is prototype application that implements a 
 Key features include:
 - Simple user-friendly design
 - Data persistance when restarting the application
-- View transaction history
 - Local faucet that can print money for demonstrative purposes
+- Duplicate token detection combined with web-of-trust implementation
+- View transaction history
 
 
  
@@ -248,11 +249,11 @@ tokens_table : TokensDao
  
 weboftrust_table : WebOfTrustDAO
 
-``` getUserTrustScore(public_key)```
+```getUserTrustScore(public_key)```
 
-``` getAllTrustScores()```
+```getAllTrustScores()```
 
 ```insertUserTrustScore(user)```
 
-``` updateUserScore(public_key, update_score_value)```
+```updateUserScore(public_key, update_score_value)```
 
