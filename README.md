@@ -53,21 +53,20 @@ It is important to note that the temporary wallet is only used for the purpose o
 The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network or a central authority, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network/authority has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network.
 
 ### Prevention
-The first measure in double spending mitigation is the prevention of it. 
+The first measure in double spending mitigation is the prevention of it. Unfortunately, we could not solve the prevention of double spending in its entirety, but we came up with (theoretical) solutions that can detect it and to enforce good behavior. One way to prevent double spending is to ask for some kind of collateral to insure that if a person double spends, the damage will be deducted from the collateral.
 
 ### Detection
-While prevention measures in the design can make it more difficult to double spend. It does not completely migitate the risk. Therefore, it becomes important to detect when it in fact does occur. We came up with duplicate token detection measure that update
+While prevention measures in the design can make it more difficult to double spend. It does not completely migitate the risk. Therefore, it becomes important to detect when it in fact does occur. We came up with a duplicate token detection measure which in combination with a web-of-trust can detect double spending. Additionally, we came up with the following theoretical solutions to detect double spending on the online chain. 
 
-
-
-- Debt accumulation
-- Not connected to network in XX amount of days when 1 party uploaded transaction.
+- Debt accumulation: If one party comes back online again and uploads their transactions to the chain, the other party's balance accumulated debt. If the debt exceeds a threshold, it could be used to detect something bad is going on.
+- Another detection measure is the time between spending offline and not coming back online in XX days when 1 party uploaded transaction.
 
 ### Enforcement
 Whenever double spending is detected, it should first be investigated whether it was done on purpose or whether something went wrong in the process. This can be done in similar fashion to what commericial banks are doing when they see strange transactions on one's creditcard.
 However, when done on purpose and maliciously, the people in question should be held accountable. Our solution to this is that wallets are tied to real-world identities, when double spending is detected. It becomes a matter of the law to track down these malicious users and procecute them.
 
-Whenever a person whom has spend money in an offline environment comes back online again, the token, transactions and web-of-trust information gets uploaded to the central authority's servers where the information gets processed accordingly to update the chain about who is trustworthy or not.
+Whenever a person whom has spend money in an offline environment comes back online again, the token, transactions and web-of-trust information gets uploaded to the central authority's servers where the information gets processed accordingly to update the chain about who is trustworthy or is not.
+
 
 # Limitations
 During the development of our solution, we encountered various limitations. The main issues are related to the implementation of the QR code.
@@ -88,7 +87,7 @@ When creating our implementation of the Offline Digital Euro token, we came acro
 - Everyone can scan the QR-code, so if somebody leaks or gets a copy of the QR and scans it as well, it will save that transaction and the coins will be duplicated. 
 - Instead of confirming the transaction on the sender's side after generating the QR code the sender can still go back even though the QR code got scanned by the receiving side. This way the receiver receives the tokens, but the sender gets to keep the tokens as well.
 - Vulnerable to copying/migrating the OfflineDigitalEuro database that contains the tokens to a different device. 
-- 
+
 
 # Future Research 
 
