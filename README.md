@@ -24,12 +24,17 @@ Steps to print digital euro tokens:
 3. Select the euro tokens to add the wallet.
 4. Click on the Continue button. The euro tokens are generated and will be displayed in the user's wallet.
 
+![Alt text](relative%20path/to/img.jpg?raw=true "Title")
+
+
 Steps to send euro tokens:
 1. Open the application.
 2. Click on the Send button.
 3. Select the amount of euro tokens to send.
 4. When clicking the Select button, a QR-code gets generated for the receiver to scan.
 5. Have the receiving party scan the QR-code 
+
+![Alt text](relative%20path/to/img.jpg?raw=true "Title")
 
 Steps to receive euro tokens:
 1. Open the application
@@ -38,6 +43,7 @@ Steps to receive euro tokens:
 4. Scan the generated QR-code. Confirmation sound will play once transaction is complete.
 5. Check in balance and transaction history whether transaction has been completed.
 
+![Alt text](relative%20path/to/img.jpg?raw=true "Title")
 
 # Solution
 The special requirement was that it should work in an emergency: when the Internet is down. When starting the project, we were advised to implement QR-code scanning to move euros between devices since that was the easiest to implement. Additionally, we had to come up with a mitigating measure that allows for the detection of any malicious users or cheaters that try to double spend.
