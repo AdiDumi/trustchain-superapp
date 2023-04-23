@@ -41,6 +41,14 @@ Steps to receive euro tokens:
 # Solution
 The special requirement was that it should work in an emergency: when the Internet is down. When starting the project, we were advised to implement QR-code scanning to move euros between devices since that was the easiest to implement. Additionally, we had to come up with a mitigating measure that allows for the detection of any malicious users or cheaters that try to double spend.
 
+## Intermediate Wallet
+The solution involves the use of a temporary wallet and a QR code. Person A initiates the transaction by placing their money into a temporary wallet. They then create a QR code that contains the private key for the wallet. This QR code is then scanned by Person B, who can then access the funds in the temporary wallet and transfer the tokens to their own wallet.
+
+To better understand how this solution works, let us consider an example. Person A wants to send money to Person B, but they are in a location without internet access. They both have a smartphone, and Person A has tokens they would like to send. Person A creates a temporary wallet and deposits the funds into it. They then create a QR code that contains the private key for the wallet. Person B scans the QR code with their smartphone, which allows them to access the funds in the temporary wallet. They can then transfer the tokens to their own wallet.
+
+It is important to note that the temporary wallet is only used for the purpose of the transaction and should not be used for long-term storage of the tokens.
+
+
 ## Double Spending Mitigation
 The hard scientific task is to come up with a measure to mitigate the double spending risk. This refers to the risk that a user may spend the same tokens more than once. Since offline transactions cannot be immediately verified by the network or a central authority, it is possible for a user to spend a tokens and then quickly initiate another transaction using the same tokens, before the network/authority has a chance to process the first transaction. This can result in a situation where the user has spent more tokens than they actually own, which undermines the integrity and security of the whole network.
 
