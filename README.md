@@ -12,6 +12,8 @@ Key features include:
 - Duplicate token detection combined with web-of-trust implementation
 - View transaction history
 
+<img src="./offlinedigitaleuro/images/offlinedigitaleuro_trustchain_app.png" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/main_balance_page.png" width="250"/>
+
 
  
 
@@ -24,7 +26,7 @@ Steps to print digital euro tokens:
 3. Select the euro tokens to add the wallet.
 4. Click on the Continue button. The euro tokens are generated and will be displayed in the user's wallet.
 
-![Alt text](relative%20path/to/img.jpg?raw=true "Title")
+<img src="./offlinedigitaleuro/images/print_money.png" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/print_money.gif" width="250" style="margin-right:80px"/> 
 
 
 Steps to send euro tokens:
@@ -34,7 +36,7 @@ Steps to send euro tokens:
 4. When clicking the Select button, a QR-code gets generated for the receiver to scan.
 5. Have the receiving party scan the QR-code 
 
-![Alt text](relative%20path/to/img.jpg?raw=true "Title")
+<img src="./offlinedigitaleuro/images/send_money1.png" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/send_money2.png" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/send_money.gif" width="250" style="margin-right:80px"/> 
 
 Steps to receive euro tokens:
 1. Open the application
@@ -43,7 +45,7 @@ Steps to receive euro tokens:
 4. Scan the generated QR-code. Confirmation sound will play once transaction is complete.
 5. Check in balance and transaction history whether transaction has been completed.
 
-![Alt text](relative%20path/to/img.jpg?raw=true "Title")
+<img src="./offlinedigitaleuro/images/scanning_qrcode.png" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/receive_money_inital.jpeg" width="250" style="margin-right:80px"/> 
 
 # Solution
 The special requirement was that it should work in an emergency: when the Internet is down. When starting the project, we were advised to implement QR-code scanning to move euros between devices since that was the easiest to implement. Additionally, we had to come up with a mitigating measure that allows for the detection of any malicious users or cheaters that try to double spend.
@@ -54,6 +56,8 @@ The solution involves the use of a temporary wallet and a QR code. Person A init
 To better understand how this solution works, let us consider an example. Person A wants to send money to Person B, but they are in a location without internet access. They both have a smartphone, and Person A has tokens they would like to send. Person A creates a temporary wallet and deposits the funds into it. They then create a QR code that contains the private key for the wallet. Person B scans the QR code with their smartphone, which allows them to access the funds in the temporary wallet. They can then transfer the tokens to their own wallet.
 
 It is important to note that the temporary wallet is only used for the purpose of the transaction and should not be used for long-term storage of the tokens.
+
+<img src="./offlinedigitaleuro/images/intermediate_wallet_illustration.png" width="400" style="margin-right:80px"/>
 
 ## Web of Trust
 In an offline money transfer scenario where internet connectivity is limited, the trustworthiness of users becomes crucial. To address this issue, a web of trust algorithm has been developed that determines whether a user is trustworthy or not. This essay will delve into how the algorithm works and its potential benefits.
@@ -67,6 +71,9 @@ Another issue that arose during the implementation of the algorithm was the limi
 The web of trust algorithm has the potential to improve the security and efficiency of offline money transfers. By assessing the trustworthiness of users based on their transaction history, fraudulent activity can be prevented, and legitimate transactions can be completed quickly and efficiently. The algorithm can also be extended to other scenarios where trust is crucial, such as online marketplaces, where it can be used to assess the trustworthiness of sellers.
 
 In conclusion, the web of trust algorithm is a valuable tool in offline money transfer scenarios where internet connectivity is limited. By using transaction history to assess the trustworthiness of users, fraudulent activity can be prevented, and legitimate transactions can be completed quickly and efficiently. Although there are still some issues to be addressed, such as the limited space in the QR code and the potential for double-spending, the algorithm has great potential for improving the security and efficiency of offline money transfers.
+
+<img src="./offlinedigitaleuro/images/receive_money_inital.jpeg" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/receive_money_good.jpeg" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/receive_money_bad.jpeg" width="250" style="margin-right:80px"/> 
+
 
 
 ## Double Spending Mitigation
