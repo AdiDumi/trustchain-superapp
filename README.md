@@ -74,6 +74,9 @@ In conclusion, the web of trust algorithm is a valuable tool in offline money tr
 
 <img src="./offlinedigitaleuro/images/receiving_money_initial.jpeg" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/receiving_money_good.jpeg" width="250" style="margin-right:80px"/> <img src="./offlinedigitaleuro/images/receiving_money_bad.jpeg" width="250" style="margin-right:80px"/>
 
+## Trustscore Calculations
+
+All the wallet owners start at a reputation score of 0 which can range from -100 to 100 where -100 means very untrustworthy and 100 means very trustworthy. For each accepted transaction from a peer, we start increasing a user's trustscore by 10. If a double spent token has been detected, we set the trustscore of the double spender to -100. When a sender's trustscore reaches 30, the receiving party sees a green indicator, when performing the transaction which means that the sending party is likely to be trustworthy. When the trustscore is below XX we indicate to the receiving party that the sender is likely to be untrustworthy. When the score is between XX and XX the user receives a warning that the trustworthiness is at an intermediate level and that they should proceed at their own risk.
 
 
 ## Double Spending Mitigation
